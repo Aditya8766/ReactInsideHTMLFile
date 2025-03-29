@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+/**
+ * Renders a React component with a message.
+ *
+ * @param {object} props - The component props.
+ * @param {string} props.message - The message to display.
+ * @returns {React.ReactElement} - The rendered React component.
+ */
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="output"></div>
+    <div id="grandparent">
+      <div id="parent">
+        <div id="child"></div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      
+      const ReactComp = ({ message }) => {
+        return <h1>{message}</h1>;
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("output"));
+      root.render(<ReactComp message="hello" />);
+    </script>
+  </body>
+</html>
